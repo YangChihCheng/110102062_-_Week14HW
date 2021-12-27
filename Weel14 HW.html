@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+	<br><br>
+
+	<img src="./dice/die1.png" id="die1" alt="blank image">
+	<img src="./dice/die1.png" id="die2" alt="blank image">
+	<img src="./dice/die1.png" id="die3" alt="blank image">
+	<img src="./dice/die1.png" id="die4" alt="blank image">
+	<img src="./dice/die1.png" id="die5" alt="blank image">
+	<img src="./dice/die1.png" id="die6" alt="blank image">
+	<br><br>
+	<img src="./dice/die1.png" id="die7" alt="blank image">
+	<img src="./dice/die1.png" id="die8" alt="blank image">
+	<img src="./dice/die1.png" id="die9" alt="blank image">
+	<img src="./dice/die1.png" id="die10" alt="blank image">
+	<img src="./dice/die1.png" id="die11" alt="blank image">
+	<img src="./dice/die1.png" id="die12" alt="blank image">
+	
+	<br><br>
+
+	<form action="#">
+		<input type="button" value="Roll Dice" id="rollButton" >
+	</form>
+
+	<br><br>
+
+	Die Rolling Frequencies
+	<br>
+
+	<table style = "border: 3px#cccccc solid;" cellpadding = "10" border = "1">
+		<tr>
+			<th>Face</th>
+			<th>Frequency</th>
+			<th>Percent</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td id="counter1"></td>
+			<td id="percent1"></td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td id="counter2"></td>
+			<td id="percent2"></td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td id="counter3"></td>
+			<td id="percent3"></td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td id="counter4"></td>
+			<td id="percent4"></td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td id="counter5"></td>
+			<td id="percent5"></td>
+		</tr><tr>
+			<td>6</td>
+			<td id="counter6"></td>
+			<td id="percent6"></td>
+		</tr>
+	</table>
+
+	<script type="text/javascript">
+		
+		var die1Image
+		var die2Image
+		var die3Image
+		var die4Image
+		var die5Image
+		var die6Image
+		var die7Image
+		var die8Image
+		var die9Image
+		var die10Image
+		var die11Image
+		var die12Image
+
+
+		var counter1 = 0
+		var counter2 = 0
+		var counter3 = 0
+		var counter4 = 0
+		var counter5 = 0
+		var counter6 = 0
+
+		
+
+		document.getElementById('counter1').textContent = counter1
+		document.getElementById('counter2').textContent = counter2
+		document.getElementById('counter3').textContent = counter3
+		document.getElementById('counter4').textContent = counter4
+		document.getElementById('counter5').textContent = counter5
+		document.getElementById('counter6').textContent = counter6
+
+		var percent1 = 0
+		var percent2 = 0
+		var percent3 = 0
+		var percent4 = 0
+		var percent5 = 0
+		var percent6 = 0
+
+		document.getElementById('percent1').textContent = percent1
+		document.getElementById('percent2').textContent = percent2
+		document.getElementById('percent3').textContent = percent3
+		document.getElementById('percent4').textContent = percent4
+		document.getElementById('percent5').textContent = percent5
+		document.getElementById('percent6').textContent = percent6
+
+
+		function start(){
+			var button = document.getElementById("rollButton")
+			button.addEventListener("click", rollDice )
+			die1Image = document.getElementById("die1")
+			die2Image = document.getElementById("die2")
+			die3Image = document.getElementById("die3")
+			die4Image = document.getElementById("die4")
+			die5Image = document.getElementById("die5")
+			die6Image = document.getElementById("die6")
+			die7Image = document.getElementById("die7")
+			die8Image = document.getElementById("die8")
+			die9Image = document.getElementById("die9")
+			die10Image = document.getElementById("die10")
+			die11Image = document.getElementById("die11")
+			die12Image = document.getElementById("die12")
+
+			
+			
+		}
+
+
+		function rollDice(){
+			setImage(die1Image);
+			setImage(die2Image);
+			setImage(die3Image);
+			setImage(die4Image);
+			setImage(die5Image);
+			setImage(die6Image);
+			setImage(die7Image);
+			setImage(die8Image);
+			setImage(die9Image);
+			setImage(die10Image);
+			setImage(die11Image);
+			setImage(die12Image);
+
+			percent1 = Math.round(10000*counter1/(counter1 + counter2 + counter3 + counter4 +counter5 + counter6))/100
+			percent2 = Math.round(10000*counter2/(counter1 + counter2 + counter3 + counter4 +counter5 + counter6))/100
+			percent3 = Math.round(10000*counter3/(counter1 + counter2 + counter3 + counter4 +counter5 + counter6))/100
+			percent4 = Math.round(10000*counter4/(counter1 + counter2 + counter3 + counter4 +counter5 + counter6))/100
+			percent5 = Math.round(10000*counter5/(counter1 + counter2 + counter3 + counter4 +counter5 + counter6))/100
+			percent6 = Math.round(10000*counter6/(counter1 + counter2 + counter3 + counter4 +counter5 + counter6))/100
+
+
+			
+
+			document.getElementById('counter1').textContent = counter1
+			document.getElementById('counter2').textContent = counter2
+			document.getElementById('counter3').textContent = counter3
+			document.getElementById('counter4').textContent = counter4
+			document.getElementById('counter5').textContent = counter5
+			document.getElementById('counter6').textContent = counter6
+
+			document.getElementById('percent1').textContent = percent1
+			document.getElementById('percent2').textContent = percent2
+			document.getElementById('percent3').textContent = percent3
+			document.getElementById('percent4').textContent = percent4
+			document.getElementById('percent5').textContent = percent5
+			document.getElementById('percent6').textContent = percent6
+
+
+
+		}
+
+		function setImage( dieImg ){
+			var dieValue = Math.floor(1 + Math.random()*6);
+
+			if (dieValue == 1){ counter1 = parseInt(counter1) + 1}
+			if (dieValue == 2){ counter2 = parseInt(counter2) + 1}
+			if (dieValue == 3){ counter3 = parseInt(counter3) + 1}
+			if (dieValue == 4){ counter4 = parseInt(counter4) + 1}
+			if (dieValue == 5){ counter5 = parseInt(counter5) + 1}
+			if (dieValue == 6){ counter6 = parseInt(counter6) + 1}
+
+			dieImg.setAttribute("src","./dice/die" + dieValue + ".png")
+			dieImg.setAttribute("alt", "die image with" + dieValue + "spot(s)")
+		}
+
+		window.addEventListener("load", start)
+
+	</script>
+
+</body>
+</html>
